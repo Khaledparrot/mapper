@@ -114,10 +114,32 @@
         padding: 6px 10px;
         font-size: 0.9em;
       }
+      .toolbar {
+        display: none; /* hide toolbar initially on phone */
+      }
+      .mobile-menu-icon {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #3498db;
+        border: none;
+        color: #fff;
+        padding: 10px;
+        border-radius: 3px;
+        z-index: 1001;
+      }
+    }
+    /* Hide mobile menu icon on larger screens */
+    .mobile-menu-icon {
+      display: none;
     }
   </style>
 </head>
 <body>
+  <!-- New mobile menu icon visible on phones -->
+  <button class="mobile-menu-icon" onclick="toggleMobileToolbar()">☰ Menu</button>
+  
   <div class="toolbar">
     <button id="menuBtn" onclick="toggleMenu()">Select Shape ▼</button>
 
@@ -520,6 +542,16 @@
 		diagram.commitTransaction("toggle grid");
 		diagram.grid.repaint();
 	}
+
+  function toggleMobileToolbar() {
+      var toolbar = document.querySelector('.toolbar');
+      // Toggle display between flex (or block) and none
+      if (toolbar.style.display === 'none' || toolbar.style.display === '') {
+        toolbar.style.display = 'flex';
+      } else {
+        toolbar.style.display = 'none';
+      }
+    }
 </script>
 </body>
 </html>
