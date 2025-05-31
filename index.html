@@ -104,6 +104,7 @@
         align-items: stretch;
         gap: 5px;
         padding: 8px 10px;
+        display: none; /* hide toolbar initially on phone */
       }
       /* Adjust diagram container height for small screens */
       #myDiagramDiv {
@@ -113,9 +114,6 @@
       .toolbar button {
         padding: 6px 10px;
         font-size: 0.9em;
-      }
-      .toolbar {
-        display: none; /* hide toolbar initially on phone */
       }
       .mobile-menu-icon {
         display: block;
@@ -129,10 +127,6 @@
         border-radius: 3px;
         z-index: 1001;
       }
-    }
-    /* Hide mobile menu icon on larger screens */
-    .mobile-menu-icon {
-      display: none;
     }
   </style>
 </head>
